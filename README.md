@@ -1,4 +1,6 @@
 API de Busca de Operadoras de Saúde
+
+
 Este projeto consiste em uma API backend construída com Flask que permite buscar informações sobre operadoras de saúde a partir de um arquivo CSV, e um frontend simples em Vue.js para interagir com a API. O sistema permite ao usuário buscar operadoras por diferentes termos, como nome, CNPJ, cidade e modalidade.
 
 Funcionalidades
