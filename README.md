@@ -1,72 +1,96 @@
-📌 Busca de Operadoras
+API de Busca de Operadoras de Saúde
+Este projeto consiste em uma API backend construída com Flask que permite buscar informações sobre operadoras de saúde a partir de um arquivo CSV, e um frontend simples em Vue.js para interagir com a API. O sistema permite ao usuário buscar operadoras por diferentes termos, como nome, CNPJ, cidade e modalidade.
 
-Este projeto é uma aplicação web para buscar operadoras de saúde registradas na ANS. Ele consiste em um backend em Flask para processar os dados e um frontend em Vue.js para exibir os resultados.
+Funcionalidades
+Backend (API): Exposição de dados em formato JSON para permitir buscas por operadoras de saúde.
 
-🚀 Tecnologias Utilizadas
+Frontend (Vue.js): Interface de busca onde o usuário pode digitar um termo e visualizar os resultados retornados pela API.
 
-Backend: Python (Flask, Pandas)
-
-Banco de Dados: Arquivo CSV
+Tecnologias Utilizadas
+Backend: Flask (Python)
 
 Frontend: Vue.js
 
-API Client: Postman (para testes)
+Banco de Dados: Arquivo CSV (relatório de operadoras)
 
-📂 Estrutura do Projeto
+Como Executar o Projeto
+Passo 1: Configuração do Backend
+Instalar dependências:
 
-📦 busca-operadoras
-├── 📂 Backend
-│   ├── app.py  # Servidor Flask
-│   ├── data/Relatorio_cadop.csv  # Base de dados
-│   ├── requirements.txt  # Dependências do Python
-│   └── ...
-│
-├── 📂 Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── BuscaComponent.vue  # Componente principal da busca
-│   │   ├── App.vue  # Página principal
-│   │   ├── main.js  # Configuração do Vue
-│   ├── public/
-│   ├── package.json  # Dependências do projeto
-│   └── ...
+Certifique-se de ter o Python 3 e pip instalados.
 
-🛠️ Configuração do Projeto
+Crie um ambiente virtual (opcional, mas recomendado):
 
-📌 1. Clonar o repositório
+bash
+Copiar
+python -m venv venv
+source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+Instalar pacotes necessários:
 
-git clone https://github.com/SEU-USUARIO/busca-operadoras.git
-cd busca-operadoras
+bash
+Copiar
+pip install flask pandas flask-cors
+Executar o servidor Flask:
 
-⚙️ 2. Configurar o Backend (Flask)
+Certifique-se de que o arquivo Relatorio_cadop.csv esteja na pasta data/.
 
-cd Backend
-python -m venv venv  # Criar ambiente virtual
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate  # Windows
-pip install -r requirements.txt  # Instalar dependências
-python app.py  # Iniciar servidor
+Execute o script do servidor Flask:
 
-O backend rodará em http://127.0.0.1:5000
+bash
+Copiar
+python app.py
+O servidor Flask irá rodar em http://127.0.0.1:5000/ por padrão.
 
-🎨 3. Configurar o Frontend (Vue.js)
+Passo 2: Configuração do Frontend (Vue.js)
+Instalar dependências do Vue:
 
-cd Frontend
-npm install  # Instalar dependências
-npm run serve  # Rodar servidor Vue
+Certifique-se de ter o Node.js e o npm instalados.
 
-O frontend estará disponível em http://localhost:8080
+No diretório do frontend, execute:
 
-🔍 Testando a API no Postman
+bash
+Copiar
+npm install
+Executar o servidor Vue:
 
-Abrir o Postman
+Inicie o servidor de desenvolvimento:
 
-Criar uma nova requisição GET para:
+bash
+Copiar
+npm run serve
+O frontend Vue estará disponível em http://localhost:8080/.
 
-http://127.0.0.1:5000/buscar?termo=saúde
+Passo 3: Testando a Aplicação
+No frontend, digite um termo de busca (exemplo: nome de uma operadora de saúde) e pressione Enter ou clique em "Buscar".
 
-Configurar os Headers:
+O frontend fará uma requisição à API backend, que irá buscar as operadoras que correspondem ao termo informado no arquivo CSV.
 
-Content-Type: application/json; charset=utf-8
+Os resultados serão exibidos na tela.
 
-Verificar o retorno dos dados JSON.
+Exemplos de Teste com o Postman
+Requisição de Busca (GET)
+URL: http://127.0.0.1:5000/buscar?termo=operadora
+
+Método: GET
+
+Exemplo de resposta:
+
+Como Funciona a Busca
+O script Python usa o pandas para carregar o arquivo CSV e procurar registros que correspondam ao termo de pesquisa fornecido. O frontend envia essa solicitação para o servidor, e os resultados são retornados como um JSON, que o Vue.js então exibe.
+
+Estrutura do Projeto
+csharp
+Copiar
+seu_projeto/
+├── app.py              # Script do backend Flask
+├── data/               # Diretório onde o CSV de operadoras é armazenado
+│   └── Relatorio_cadop.csv
+├── frontend/           # Código do frontend Vue.js
+│   ├── src/            # Componentes Vue.js
+│   └── public/         # Arquivos estáticos
+├── images/             # Imagens usadas no README
+│   ├── postman_json.png
+│   └── vue.png
+└── README.md           # Este arquivo
+
+A seguir está uma captura de tela que demonstra o funcionamento da interface do usuário em Vue.js.
