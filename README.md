@@ -1,6 +1,4 @@
 API de Busca de Operadoras de Saúde
-
-
 Este projeto consiste em uma API backend construída com Flask que permite buscar informações sobre operadoras de saúde a partir de um arquivo CSV, e um frontend simples em Vue.js para interagir com a API. O sistema permite ao usuário buscar operadoras por diferentes termos, como nome, CNPJ, cidade e modalidade.
 
 Funcionalidades
@@ -25,12 +23,14 @@ Crie um ambiente virtual (opcional, mas recomendado):
 
 bash
 Copiar
+Editar
 python -m venv venv
 source venv/bin/activate  # No Windows use `venv\Scripts\activate`
 Instalar pacotes necessários:
 
 bash
 Copiar
+Editar
 pip install flask pandas flask-cors
 Executar o servidor Flask:
 
@@ -40,6 +40,7 @@ Execute o script do servidor Flask:
 
 bash
 Copiar
+Editar
 python app.py
 O servidor Flask irá rodar em http://127.0.0.1:5000/ por padrão.
 
@@ -52,6 +53,7 @@ No diretório do frontend, execute:
 
 bash
 Copiar
+Editar
 npm install
 Executar o servidor Vue:
 
@@ -59,6 +61,7 @@ Inicie o servidor de desenvolvimento:
 
 bash
 Copiar
+Editar
 npm run serve
 O frontend Vue estará disponível em http://localhost:8080/.
 
@@ -76,11 +79,12 @@ URL: http://127.0.0.1:5000/buscar?termo=operadora
 Método: GET
 
 Exemplo de resposta:
-
+![Exemplo de Resposta - JSON](images/postman_json.png)
 Como Funciona a Busca
 O script Python usa o pandas para carregar o arquivo CSV e procurar registros que correspondam ao termo de pesquisa fornecido. O frontend envia essa solicitação para o servidor, e os resultados são retornados como um JSON, que o Vue.js então exibe.
 
-seu_projeto/
+Estrutura do Projeto
+TESTE-API/
 ├── app.py              # Script do backend Flask
 ├── data/               # Diretório onde o CSV de operadoras é armazenado
 │   └── Relatorio_cadop.csv
@@ -91,6 +95,7 @@ seu_projeto/
 │   ├── postman_json.png
 │   └── vue.png
 └── README.md           # Este arquivo
-
-
+Imagens de Demonstração
+Funcionamento no Frontend
 A seguir está uma captura de tela que demonstra o funcionamento da interface do usuário em Vue.js.
+![Vue Js](images/vue.png)
