@@ -80,9 +80,6 @@ Exemplo de resposta:
 Como Funciona a Busca
 O script Python usa o pandas para carregar o arquivo CSV e procurar registros que correspondam ao termo de pesquisa fornecido. O frontend envia essa solicitação para o servidor, e os resultados são retornados como um JSON, que o Vue.js então exibe.
 
-Estrutura do Projeto
-csharp
-Copiar
 seu_projeto/
 ├── app.py              # Script do backend Flask
 ├── data/               # Diretório onde o CSV de operadoras é armazenado
@@ -94,5 +91,6 @@ seu_projeto/
 │   ├── postman_json.png
 │   └── vue.png
 └── README.md           # Este arquivo
+
 
 A seguir está uma captura de tela que demonstra o funcionamento da interface do usuário em Vue.js.
